@@ -5,7 +5,7 @@ FROM node:15
 WORKDIR /usr/src/app
 
 # 複製 package.json 和 package-lock.json
-COPY package.json yarn.lock ./
+COPY package.json ./
 
 # 安裝依賴
 RUN yarn install
@@ -16,9 +16,6 @@ COPY . .
 
 # 暴露端口
 EXPOSE 3000
-
-# 給run.sh腳本執行權限
-RUN chmod +x ./run.sh
 
 # 啟動命令
 RUN node server.js
