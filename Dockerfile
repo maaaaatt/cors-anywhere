@@ -17,5 +17,8 @@ COPY . .
 # 暴露端口
 EXPOSE 3000
 
+# 給run.sh腳本執行權限
+RUN chmod +x ./run.sh
+
 # 啟動命令
-RUN forever server.js
+CMD ./run.sh
