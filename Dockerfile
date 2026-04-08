@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 3000
 
 # 啟動命令
-RUN node server.js
+RUN forever server.js
