@@ -1,5 +1,5 @@
 # 使用 Node.js 12 映像作為基礎
-FROM node:15
+FROM node:15-alpine
 
 # 設置工作目錄
 WORKDIR /usr/src/app
