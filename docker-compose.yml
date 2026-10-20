@@ -1,0 +1,18 @@
+version: '1.0.0'
+services:
+  nuxt:
+    image: ghcr.io/maaaaatt/cors-anywhere:latest
+    container_name: cors-anywhere
+    restart: unless-stopped
+    ports:
+      - "3002:3000"          # 外部端口:容器內端口
+    environment:
+      - NODE_ENV=production
+    deploy:
+      resources:
+        limits:                 # 硬性上限
+          cpus: '1.0'           # 最多使用 1 顆 CPU
+          memory: 1.5G            # 記憶體最多 1GB
+        reservations:           # Soft limit（保留資源）
+          cpus: '0.5'           # 至少保留 0.5 顆 CPU
+          memory: 512M          # 至少保留 512MB 記憶體
